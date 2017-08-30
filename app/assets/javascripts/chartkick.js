@@ -997,6 +997,7 @@
             var data = new google.visualization.DataTable();
             data.addColumn({type: "string", id: "Name"});
             data.addColumn({type: "string", id: "Label"});
+            data.addColumn({type: "string", role: 'tooltip', 'p': {'html': true}});
             data.addColumn({type: "date", id: "Start"});
             data.addColumn({type: "date", id: "End"});
             data.addRows(chart.data);
@@ -1637,8 +1638,8 @@
   {
     var i, data = chart.rawData;
     for (i = 0; i < data.length; i++) {
-      data[i][2] = toDate(data[i][2]);
       data[i][3] = toDate(data[i][3]);
+      data[i][4] = toDate(data[i][4]);
     }
     return data;
   }
